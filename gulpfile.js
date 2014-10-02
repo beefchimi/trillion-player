@@ -128,6 +128,16 @@ gulp.task('scripts', function() {
 // Check for changed image files and compress them
 gulp.task('images', function() {
 
+	// root images
+	gulp.src(paths.images.src + '*.png')
+		.pipe(plugins.changed(paths.images.dest))
+		.pipe(plugins.imagemin({
+			optimizationLevel: 7,
+			progressive: true,
+			use: [pngcrush()] // very slow, but better compression
+		}))
+		.pipe(gulp.dest(paths.images.dest));
+
 	// player body pngs
 	gulp.src(paths.images.src + paths.images.player.body + '*.png')
 		.pipe(plugins.changed(paths.images.dest + paths.images.player.body))

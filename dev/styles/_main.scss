@@ -5,10 +5,11 @@
 // Foundation
 // ----------------------------------------------------------------------------
 html {
-	font-family: 'brandon-grotesque', 'Brandon Grotesque', Futura, 'Trebuchet MS', Arial, sans-serif;
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
 }
 body {
 	position: relative;
+	padding: 6rem;
 	color: #fff;
 	background-color: #000;
 }
@@ -28,8 +29,10 @@ nav > a {
 // General Styles
 // ----------------------------------------------------------------------------
 main {
+	height: 100vh;
 }
 section {
+	height: 100vh;
 }
 article {
 }
@@ -48,7 +51,33 @@ nav {
 // ==|== sections =============================================================
 // ============================================================================
 
-// Intro Section
+// Avatar
 // ----------------------------------------------------------------------------
-section.intro {
+section.player {
+}
+section.player h1 {
+	margin-bottom: 8rem;
+	font-size: 3.2rem;
+	letter-spacing: 0.6rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+// --- Avatar --- \\
+article.avatar {
+	position: relative;
+	margin: 0 auto;
+	width: 25.6rem;
+	height: 25.6rem;
+	box-shadow: 0 0 0 1px #fff; // border: 1px solid #fff;
+/*
+	background-image: url('../img/question-mark.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+*/
+}
+article.avatar img {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
