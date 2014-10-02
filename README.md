@@ -1,4 +1,4 @@
-trillion-character
+trillion-player
 ==================
 
-Character Generator for Trillion
+Player Generator for Trillion

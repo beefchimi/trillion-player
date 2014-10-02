@@ -1,7 +1,7 @@
 {
-  "name": "trillion-character",
+  "name": "trillion-player",
   "version": "0.0.1",
-  "description": "Character Generator for Trillion.",
+  "description": "Player Generator for Trillion.",
   "main": "gulpfile.js",
   "devDependencies": {
     "del": "^0.1.3",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/beefchimi/trillion-character.git"
+    "url": "https://github.com/beefchimi/trillion-player.git"
   },
   "keywords": [
     "trillion",
@@ -36,7 +36,7 @@
   ],
   "author": "Curtis Dulmage",
   "bugs": {
-    "url": "https://github.com/beefchimi/trillion-character/issues"
+    "url": "https://github.com/beefchimi/trillion-player/issues"
   },
-  "homepage": "https://github.com/beefchimi/trillion-character"
+  "homepage": "https://github.com/beefchimi/trillion-player"
 }
