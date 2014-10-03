@@ -19,6 +19,11 @@ body {
 ::selection {
 	background: #000;
 }
+img {
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+}
 
 // Transitions
 // ----------------------------------------------------------------------------
@@ -55,20 +60,29 @@ nav {
 // ----------------------------------------------------------------------------
 section.player {
 }
-section.player h1 {
-	margin-bottom: 8rem;
-	font-size: 3.2rem;
-	letter-spacing: 0.6rem;
+section.player h1,
+section.player h2 {
 	text-align: center;
 	text-transform: uppercase;
+}
+section.player h1 {
+	margin-bottom: 1rem;
+	font-size: 3.2rem;
+	letter-spacing: 0.6rem;
+}
+section.player h2 {
+	margin-bottom: 8rem;
+	font-size:2rem;
+	letter-spacing: 0.4rem;
+	color: #ff00ff;
 }
 // --- Avatar --- \\
 article.avatar {
 	position: relative;
-	margin: 0 auto;
+	margin: 0 auto 3.2rem auto;
 	width: 25.6rem;
 	height: 25.6rem;
-	box-shadow: 0 0 0 1px #fff; // border: 1px solid #fff;
+	box-shadow: 0 0 0 1px #c0c0c0; // border: 1px solid #fff;
 /*
 	background-image: url('../img/question-mark.png');
 	background-repeat: no-repeat;
@@ -80,4 +94,26 @@ article.avatar img {
 	position: absolute;
 	top: 0;
 	left: 0;
+	width: 25.6rem;
+	height: 25.6rem;
+}
+// --- Generate --- \\
+section.player a {
+	display: block;
+	margin: 0 auto;
+	padding: 1.6rem;
+	width: 26rem;
+	font-size: 1.6rem;
+	font-weight: 700;
+	letter-spacing: 0.2rem;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #800080;
+}
+section.player a:hover {
+	background-color: #ff00ff;
+}
+section.player a:active {
+	opacity: 0.8
 }
