@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	// --- Objects and Initial Setup --- \\
 
 	// common objects
-	var elBody      = document.body,
-		elGenerate  = document.getElementById('generate'),
-		elAvatar    = document.getElementById('player_avatar');
+	var elBody       = document.body,
+		elGenerate   = document.getElementById('generate'),
+		elAvatar     = document.getElementById('player_avatar'),
+		elAvatarImgs = elAvatar.getElementsByTagName('img');
 
 /*
 	var elPartBody  = elAvatar.getElementsByTagName('img')[0],
@@ -37,19 +38,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// onPageLoad: Main Function To Fire on Window Load
 	// ----------------------------------------------------------------------------
+
+/*
 	function onPageLoad() {
 
-
-
 	}
+*/
 
 
+	// generateAvatar: Character Generator
+	// ----------------------------------------------------------------------------
 	function generateAvatar() {
 
-		// Math.floor(Math.random() * (randomMax - min + 1)) + min
-		// min      = 0,
-		// maxBody  = elPartBody.length - 1,
 
+/*
+		function hideShowStatic() {
+
+			for (var i = 0; i < elAvatarImgs.length - 1; i++) {
+
+				// elAvatarImgs[i + 1].style.visibility = "hidden";
+
+				if (elAvatarImgs[i + 1].style.visibility === 'hidden') {
+					elAvatarImgs[i + 1].style.visibility = 'visible';
+				} else {
+					elAvatarImgs[i + 1].style.visibility = 'hidden';
+				}
+
+			}
+
+		}
+*/
+
+		// hideShowStatic();
+
+		elAvatarImgs[0].style.visibility = 'visible';
+
+		for (var i = 0; i < elAvatarImgs.length - 1; i++) {
+
+			elAvatarImgs[i + 1].style.visibility = 'hidden';
+
+		}
 
 		for (var i = 0; i < avatarLayers.length; i++) {
 
@@ -58,28 +86,26 @@ document.addEventListener('DOMContentLoaded', function() {
 				currentPrefix = currentPart[0].substr(0, currentPart[0].indexOf('_')).toLowerCase();
 				random        = Math.floor(Math.random() * currentMax),
 				chosenSrc     = currentPart[random],
-				targetImg     = elAvatar.getElementsByTagName('img')[i];
+				targetImg     = elAvatarImgs[i + 1];
 
-			console.log(currentPrefix);
-			console.log(targetImg);
-
+			// targetImg.style.display = 'none';
 			targetImg.setAttribute('src', 'assets/img/player/' + currentPrefix + '/' + chosenSrc + '.png')
 
 		}
 
+		setTimeout(function() {
 
+			// hideShowStatic();
 
+			for (var i = 0; i < elAvatarImgs.length - 1; i++) {
 
-/*
-		// randomly select a home option
-		var maxBody  = bodyParts.length,
-			maxHead  = elPartHead.length,
-			maxMouth = elPartMouth.length,
-			maxFace  = elPartFace.length,
-			maxHair  = elPartHair.length,
-			maxFlair = elPartFlair.length,
-			random   = Math.floor(Math.random() * randomMax);
-*/
+				elAvatarImgs[i + 1].style.visibility = 'visible';
+
+			}
+
+			elAvatarImgs[0].style.visibility = 'hidden';
+
+		}, 600);
 
 	}
 

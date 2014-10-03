@@ -129,7 +129,7 @@ gulp.task('scripts', function() {
 gulp.task('images', function() {
 
 	// root images
-	gulp.src(paths.images.src + '*.png')
+	gulp.src(paths.images.src + '*.*')
 		.pipe(plugins.changed(paths.images.dest))
 		.pipe(plugins.imagemin({
 			optimizationLevel: 7,
